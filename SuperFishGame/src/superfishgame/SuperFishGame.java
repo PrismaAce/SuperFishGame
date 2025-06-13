@@ -14,7 +14,7 @@ public class SuperFishGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        TableManager tm = new TableManager();
     }
     
 }
