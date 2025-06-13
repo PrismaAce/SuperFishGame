@@ -35,6 +35,9 @@ public class SuperFishController {
         {
             System.out.println("Fish");
             Fish fish = FishManager.FishMap.getRandomFish();
+            model.incrementFish(fish.getID());
+            model.incrementFish(0); // 0 is all
+            view.panel.updateText2(Integer.toString(model.getAmountByID(fish.getID())), Integer.toString(model.getAmountByID(0)));
             view.lastCaught.updateFish(fish);
             view.updateLastCaught(fish);
         }

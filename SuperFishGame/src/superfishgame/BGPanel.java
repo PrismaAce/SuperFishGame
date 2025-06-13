@@ -25,6 +25,8 @@ public class BGPanel extends JPanel {
     public int size = 36;
     Font drawFont = new Font(font, 0, size);
     String message = "";
+    String fishCount1 = "";
+    String fishCount2 = "";
     int x = 10;
     int y = 40;
     
@@ -45,11 +47,20 @@ public class BGPanel extends JPanel {
         g.setColor(new Color(colour[0],colour[1],colour[2]));
         g.drawImage(this.image, 0, 0, null);
         g.drawString(message, x, y);
+        g.drawString(fishCount1, x, y+420);
+        g.drawString(fishCount2, x, y+470);
     }
     
     public void updateText(String s)
     {
         message = s;
+        repaint();
+    }
+    
+    public void updateText2(String oneFish, String allFish)
+    {
+        fishCount1 = "This Type: "+oneFish;
+        fishCount2 = "Total Fish Caught: "+allFish;
         repaint();
     }
     

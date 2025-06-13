@@ -8,17 +8,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import superfishgame.SuperFishModel;
 
 /**
  *
  * @author codem
  */
 public class FishManager {
-    public FishManager()
+    private SuperFishModel model;
+    public FishManager(SuperFishModel model)
     {
-        Fish.createAndRegister(1, "fish", "Normal Fish");
-        RareFish.createAndRegister(2, "negativefish", 2, "Negative Fish", new int[] {0,40,255});
-        RareFish.createAndRegister(3, "fish", 2, "Normal Fish 3", new int[] {255,1,1});
+        this.model = model;
+        Fish.createAndRegister(model, 1, "fish", "Normal Fish");
+        Fish.createAndRegister(model, 2, "happyfish", "Happy Fish");
+        Fish.createAndRegister(model, 3, "ogrefish", "Ogre Fish");
+        RareFish.createAndRegister(model,4, "negativefish", 2, "Negative Fish", new int[] {0,40,255});
+        RareFish.createAndRegister(model,5, "evilfish", 2, "Evil Fish", new int[] {255,1,1});
+        RareFish.createAndRegister(model,6, "glitchyfish", 2, "Evil Fish", new int[] {20,255,1});
+        RareFish.createAndRegister(model,7, "evilfish", 5, "Super Evil Fish", new int[] {255,1,1});
+        RareFish.createAndRegister(model,8, "fishbone", 10, "Fishbone", new int[] {120,120,120});
     }
     
     public static class FishMap

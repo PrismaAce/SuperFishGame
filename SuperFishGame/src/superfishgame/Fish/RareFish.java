@@ -5,6 +5,7 @@
 package superfishgame.Fish;
 
 import superfishgame.SuperFishGame;
+import superfishgame.SuperFishModel;
 
 /**
  *
@@ -18,9 +19,11 @@ public class RareFish extends Fish {
         this.colour = colour;
     }
     
-    public static RareFish createAndRegister(int ID, String spritePath, int rarity, String name, int[] colour) {
+    public static RareFish createAndRegister(SuperFishModel model, int ID, String spritePath, int rarity, String name, int[] colour) {
+        model.initialiseFish(ID);
         RareFish fish = new RareFish(ID, spritePath, rarity, name, colour);
         FishManager.FishMap.Map.put(ID, fish);
+        
         return fish;
     }
     

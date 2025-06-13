@@ -7,6 +7,7 @@ package superfishgame.Fish;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import superfishgame.SuperFishGame;
+import superfishgame.SuperFishModel;
 
 /**
  *
@@ -59,9 +60,11 @@ public abstract class Fish {
         return 1.0 / rarity;
     }
     
-    public static Fish createAndRegister(int ID, String spritePath, String name) {
+    public static Fish createAndRegister(SuperFishModel model, int ID, String spritePath, String name) {
+        model.initialiseFish(ID);
         Fish fish = new Fish(ID, spritePath, 1, name) {};
         FishManager.FishMap.Map.put(ID, fish);
+        
         return fish;
     }
 }
