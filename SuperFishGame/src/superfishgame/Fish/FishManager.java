@@ -13,6 +13,6 @@ public class FishManager {
     {
         Fish.createAndRegister(1, "fish", 1, "Normal Fish");
         Fish.createAndRegister(2, "fish", 1, "Normal Fish 2");
-        Fish.createAndRegister(3, "fish", 1, "Normal Fish 3");
+        RareFish.createAndRegister(3, "fish", 1, "Normal Fish 3", new int[] {255,1,1});
     }
 }

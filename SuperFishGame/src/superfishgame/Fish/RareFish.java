@@ -11,7 +11,7 @@ import superfishgame.SuperFishGame;
  * @author codem
  */
 public class RareFish extends Fish {
-    int[] colour = {255, 255, 255};
+    private int[] colour = {255, 255, 255};
     public RareFish(int ID, String spritePath, int rarity, String name, int[] colour) {
         super(ID, spritePath, rarity, name);
         this.rarity = rarity;
@@ -22,6 +22,11 @@ public class RareFish extends Fish {
         RareFish fish = new RareFish(ID, spritePath, rarity, name, colour);
         SuperFishGame.FishMap.Map.put(ID, fish);
         return fish;
+    }
+    
+    public int[] getColour()
+    {
+        return colour;
     }
     
 }

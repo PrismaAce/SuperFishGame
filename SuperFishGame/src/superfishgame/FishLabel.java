@@ -21,4 +21,10 @@ public class FishLabel extends JLabel {
         originalImage = fish.getImage();
         
     }
+    
+    public void updateFish(Fish fish)
+    {
+        this.fish = fish;
+        originalImage = fish.getImage();
+    }
 }

@@ -6,6 +6,7 @@ package superfishgame;
 
 import java.awt.*;
 import javax.swing.*;
+import superfishgame.Fish.*;
 
 /**
  *
@@ -37,7 +38,7 @@ public class SuperFishView extends JFrame {
         setVisible(true);
     }
     
-    public void updateLastCaught()
+    public void updateLastCaught(Fish fish)
     {
         panel.removeAll();
         panel.add(Box.createVerticalGlue()); // push content downward

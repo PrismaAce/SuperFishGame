@@ -4,6 +4,7 @@
  */
 package superfishgame;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Graphics;
@@ -18,6 +19,7 @@ import javax.swing.JPanel;
 public class BGPanel extends JPanel {
     private final Image image;
     private final int[] dimensions;
+    private int[] colour = {0,0,0};
     private static ImageObserver observer;
     public String font = "Arial";
     public int size = 36;
@@ -40,6 +42,7 @@ public class BGPanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setFont(drawFont);
+        g.setColor(new Color(colour[0],colour[1],colour[2]));
         g.drawImage(this.image, 0, 0, null);
         g.drawString(message, x, y);
     }
@@ -47,6 +50,18 @@ public class BGPanel extends JPanel {
     public void updateText(String s)
     {
         message = s;
+        repaint();
+    }
+    
+    public void updateColour(int[] newColours)
+    {
+        colour = new int[] {newColours[0], newColours[1], newColours[2]};
+        repaint();
+    }
+    
+    public void resetColours()
+    {
+        colour = new int[] {0, 0, 0};
         repaint();
     }
     

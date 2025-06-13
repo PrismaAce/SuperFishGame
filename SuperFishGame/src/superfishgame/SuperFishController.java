@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.ImageObserver;
 import javax.swing.ImageIcon;
+import superfishgame.Fish.RareFish;
 
 /**
  *
@@ -33,7 +34,8 @@ public class SuperFishController {
         public void actionPerformed(ActionEvent e)
         {
             System.out.println("Fish");
-            view.updateLastCaught();
+            view.lastCaught.updateFish(SuperFishGame.FishMap.Map.get(3));
+            view.updateLastCaught(SuperFishGame.FishMap.Map.get(3));
         }
     }
     
@@ -41,16 +43,17 @@ public class SuperFishController {
     {
         @Override
         public void mouseEntered(java.awt.event.MouseEvent evt) {
-            if(evt.getSource() instanceof FishLabel)
+            if(evt.getSource() instanceof FishLabel label)
             {
-                Image image = view.lastCaught.originalImage;
+                Image image = label.originalImage;
                 Image scaled = image.getScaledInstance((int)(image.getWidth(observer) * 1.1),(int)(image.getHeight(observer) * 1.1),Image.SCALE_SMOOTH);
                 view.lastCaught.setIcon(new ImageIcon(scaled));
-                view.panel.updateText(view.lastCaught.fish.getName());
-            
-        }
-        
-
+                view.panel.updateText(label.fish.getName());
+                if (label.fish instanceof RareFish rf)
+                {
+                    view.panel.updateColour(rf.getColour());
+                }
+            }
         }
 
         @Override
@@ -59,6 +62,7 @@ public class SuperFishController {
             {
                 view.lastCaught.setIcon(new ImageIcon(view.lastCaught.originalImage));
                 view.panel.updateText("");
+                view.panel.resetColours();
             }
         }
 
