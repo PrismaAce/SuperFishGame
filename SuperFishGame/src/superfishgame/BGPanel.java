@@ -4,6 +4,7 @@
  */
 package superfishgame;
 
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.image.ImageObserver;
@@ -18,7 +19,14 @@ public class BGPanel extends JPanel {
     private final Image image;
     private final int[] dimensions;
     private static ImageObserver observer;
-        public BGPanel() {
+    public String font = "Arial";
+    public int size = 36;
+    Font drawFont = new Font(font, 0, size);
+    String message = "";
+    int x = 10;
+    int y = 40;
+    
+    public BGPanel() {
         this.image = new ImageIcon("./resources/background.png").getImage();
         this.dimensions = new int[]{image.getWidth(observer), image.getHeight(observer)};
     }
@@ -31,6 +39,15 @@ public class BGPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.setFont(drawFont);
         g.drawImage(this.image, 0, 0, null);
+        g.drawString(message, x, y);
     }
+    
+    public void updateText(String s)
+    {
+        message = s;
+        repaint();
+    }
+    
 }

@@ -4,6 +4,9 @@
  */
 package superfishgame;
 
+import java.util.HashMap;
+import superfishgame.Fish.*;
+
 /**
  *
  * @author codem
@@ -14,9 +17,16 @@ public class SuperFishGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        FishManager fm = new FishManager();
         SuperFishModel model = new SuperFishModel();
         SuperFishView view = new SuperFishView();
         SuperFishController controller = new SuperFishController(model, view);
     }
+    
+    public static class FishMap
+    {
+        public static final HashMap<Integer, Fish> Map = new HashMap<>();
+    }
+    
     
 }

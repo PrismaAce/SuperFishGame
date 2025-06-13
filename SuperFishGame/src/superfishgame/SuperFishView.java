@@ -4,21 +4,48 @@
  */
 package superfishgame;
 
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 /**
  *
  * @author codem
  */
 public class SuperFishView extends JFrame {
+    public JButton fishButton = new JButton("Fish");
+    public FishLabel lastCaught = new FishLabel(SuperFishGame.FishMap.Map.get(1));
+    BGPanel panel = new BGPanel();
+    
     public SuperFishView()
     {
-        BGPanel panel = new BGPanel();
-        setTitle("Math Quiz");
+        // Panels
+        
+        JPanel buttonsPanel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+
+        // Frame Data
+        setTitle("Super Fish Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(panel.getDimensions()[0], panel.getDimensions()[1]);
+        // Add Components
+        buttonsPanel.add(fishButton);
+        // Add Panels
         add(panel, BorderLayout.CENTER);
+        add(buttonsPanel, BorderLayout.SOUTH);
+        
         setVisible(true);
+    }
+    
+    public void updateLastCaught()
+    {
+        panel.removeAll();
+        panel.add(Box.createVerticalGlue()); // push content downward
+        panel.add(lastCaught);
+        panel.add(Box.createVerticalGlue()); // balance it
+
+        lastCaught.setAlignmentX(Component.CENTER_ALIGNMENT);
+        revalidate();
+        repaint();
     }
 }

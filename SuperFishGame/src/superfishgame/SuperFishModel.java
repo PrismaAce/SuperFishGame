@@ -19,5 +19,48 @@ public class SuperFishModel {
     public SuperFishModel() {
         DBManager = new DatabaseManager();
         connection = DBManager.getConnection();
+        setupDB();
+    }
+    
+    private void setupDB()
+    {
+        try
+        {
+            statement = connection.createStatement();
+            if (!fishTableExists())
+            {
+                statement.executeUpdate("CREATE TABLE FISHTABLE (fish_id INT, amount INT)");
+            }
+            else 
+            {
+                System.out.println("Yes fish table");
+            }
+            statement.close();
+        }
+        catch (SQLException e)
+        {
+                    
+        }
+    }
+    
+    private boolean fishTableExists()
+    {
+        try 
+        {
+            DatabaseMetaData meta = connection.getMetaData();
+            try
+            {
+                ResultSet rs = meta.getTables(null, null, "FISHTABLE", null);
+                return rs.next();
+            }
+            catch (SQLException ex) {}
+        } 
+        catch (SQLException ex) {}
+        return false;
+    }
+    
+    public void addFishToTable()
+    {
+        
     }
 }
