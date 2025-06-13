@@ -7,6 +7,7 @@ package superfishgame;
 import java.awt.*;
 import javax.swing.*;
 import superfishgame.Fish.Fish;
+import superfishgame.Fish.FishManager;
 
 /**
  *
@@ -14,7 +15,7 @@ import superfishgame.Fish.Fish;
  */
 public class FishLabel extends JLabel {
     Image originalImage;
-    Fish fish = SuperFishGame.FishMap.Map.get(1);
+    Fish fish = FishManager.FishMap.Map.get(1);
     public FishLabel(Fish fish)
     {
         super(fish.getIcon());

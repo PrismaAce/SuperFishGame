@@ -20,7 +20,7 @@ public class RareFish extends Fish {
     
     public static RareFish createAndRegister(int ID, String spritePath, int rarity, String name, int[] colour) {
         RareFish fish = new RareFish(ID, spritePath, rarity, name, colour);
-        SuperFishGame.FishMap.Map.put(ID, fish);
+        FishManager.FishMap.Map.put(ID, fish);
         return fish;
     }
     

@@ -23,10 +23,4 @@ public class SuperFishGame {
         SuperFishController controller = new SuperFishController(model, view);
     }
     
-    public static class FishMap
-    {
-        public static final HashMap<Integer, Fish> Map = new HashMap<>();
-    }
-    
-    
 }

@@ -52,9 +52,13 @@ public abstract class Fish {
         return this.name;
     }
     
+    public double getWeight() {
+        return 1.0 / rarity;
+    }
+    
     public static Fish createAndRegister(int ID, String spritePath, String name) {
         Fish fish = new Fish(ID, spritePath, 1, name) {};
-        SuperFishGame.FishMap.Map.put(ID, fish);
+        FishManager.FishMap.Map.put(ID, fish);
         return fish;
     }
 }

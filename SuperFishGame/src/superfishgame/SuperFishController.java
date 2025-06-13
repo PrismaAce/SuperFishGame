@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.ImageObserver;
 import javax.swing.ImageIcon;
+import superfishgame.Fish.FishManager;
 import superfishgame.Fish.RareFish;
 
 /**
@@ -34,8 +35,8 @@ public class SuperFishController {
         public void actionPerformed(ActionEvent e)
         {
             System.out.println("Fish");
-            view.lastCaught.updateFish(SuperFishGame.FishMap.Map.get(3));
-            view.updateLastCaught(SuperFishGame.FishMap.Map.get(3));
+            view.lastCaught.updateFish(FishManager.FishMap.Map.get(3));
+            view.updateLastCaught(FishManager.FishMap.Map.get(3));
         }
     }
     

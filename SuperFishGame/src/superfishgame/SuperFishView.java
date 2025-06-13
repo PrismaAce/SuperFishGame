@@ -14,7 +14,7 @@ import superfishgame.Fish.*;
  */
 public class SuperFishView extends JFrame {
     public JButton fishButton = new JButton("Fish");
-    public FishLabel lastCaught = new FishLabel(SuperFishGame.FishMap.Map.get(1));
+    public FishLabel lastCaught = new FishLabel(FishManager.FishMap.Map.get(1));
     BGPanel panel = new BGPanel();
     
     public SuperFishView()
