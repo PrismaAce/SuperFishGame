@@ -11,8 +11,8 @@ package superfishgame.Fish;
 public class FishManager {
     public FishManager()
     {
-        Fish.createAndRegister(1, "fish", 1, "Normal Fish");
-        Fish.createAndRegister(2, "fish", 1, "Normal Fish 2");
+        Fish.createAndRegister(1, "fish", "Normal Fish");
+        Fish.createAndRegister(2, "fish", "Normal Fish 2");
         RareFish.createAndRegister(3, "fish", 1, "Normal Fish 3", new int[] {255,1,1});
     }
 }

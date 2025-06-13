@@ -52,8 +52,8 @@ public abstract class Fish {
         return this.name;
     }
     
-    public static Fish createAndRegister(int ID, String spritePath, int rarity, String name) {
-        Fish fish = new Fish(ID, spritePath, rarity, name) {};
+    public static Fish createAndRegister(int ID, String spritePath, String name) {
+        Fish fish = new Fish(ID, spritePath, 1, name) {};
         SuperFishGame.FishMap.Map.put(ID, fish);
         return fish;
     }
