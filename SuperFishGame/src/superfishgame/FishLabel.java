@@ -27,5 +27,6 @@ public class FishLabel extends JLabel {
     {
         this.fish = fish;
         originalImage = fish.getImage();
+        this.setIcon(new ImageIcon(fish.getImage()));
     }
 }

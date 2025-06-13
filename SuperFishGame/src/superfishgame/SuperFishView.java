@@ -41,9 +41,9 @@ public class SuperFishView extends JFrame {
     public void updateLastCaught(Fish fish)
     {
         panel.removeAll();
-        panel.add(Box.createVerticalGlue()); // push content downward
+        panel.add(Box.createVerticalGlue()); // this is how we put it in the middle apparently idk
         panel.add(lastCaught);
-        panel.add(Box.createVerticalGlue()); // balance it
+        panel.add(Box.createVerticalGlue());
 
         lastCaught.setAlignmentX(Component.CENTER_ALIGNMENT);
         revalidate();

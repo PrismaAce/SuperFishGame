@@ -17,7 +17,7 @@ public class FishManager {
     public FishManager()
     {
         Fish.createAndRegister(1, "fish", "Normal Fish");
-        Fish.createAndRegister(2, "fish", "Normal Fish 2");
+        RareFish.createAndRegister(2, "negativefish", 2, "Negative Fish", new int[] {0,40,255});
         RareFish.createAndRegister(3, "fish", 2, "Normal Fish 3", new int[] {255,1,1});
     }
     
@@ -25,7 +25,7 @@ public class FishManager {
     {
         public static final HashMap<Integer, Fish> Map = new HashMap<>();
         
-        public Fish getRandomFish()
+        public static Fish getRandomFish()
         {
             List<Fish> fishList = new ArrayList<>(Map.values());
             double totalWeight = 0;

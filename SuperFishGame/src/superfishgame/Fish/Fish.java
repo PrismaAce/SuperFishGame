@@ -22,7 +22,10 @@ public abstract class Fish {
     public Fish (int ID, String spritePath, int rarity, String name)
     {
         String fullPath = "./resources/fish/";
-        if (spritePath == null) fullPath += "fish.png";
+        if (spritePath == null) {
+            System.out.println("defaulting");
+            fullPath += "fish.png";
+        }
         else fullPath += spritePath+".png";
         this.image = new ImageIcon(fullPath).getImage();
         this.icon = new ImageIcon(fullPath);
