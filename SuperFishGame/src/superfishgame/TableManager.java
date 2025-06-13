@@ -11,6 +11,7 @@ import java.sql.*;
  * @author codem
  */
 public class TableManager {
+    // Separate from Database Manager since I want to run SQL commands here.
     private final DatabaseManager DBManager;
     private final Connection connection;
     private Statement statement;

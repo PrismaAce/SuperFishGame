@@ -10,6 +10,7 @@ import java.sql.*;
  * @author codem
  */
 public class DatabaseManager {
+    // For connecting to DB
     private static final String USER = "coolusername";
     private static final String PW = "bigpassword";
     private static final String URL = "jdbc:derby:SuperFishDB; create=true";
