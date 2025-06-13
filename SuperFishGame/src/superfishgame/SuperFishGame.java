@@ -14,7 +14,9 @@ public class SuperFishGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        TableManager tm = new TableManager();
+        SuperFishModel model = new SuperFishModel();
+        SuperFishView view = new SuperFishView();
+        SuperFishController controller = new SuperFishController(model, view);
     }
     
 }

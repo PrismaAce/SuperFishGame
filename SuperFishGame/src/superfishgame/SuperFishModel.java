@@ -10,13 +10,13 @@ import java.sql.*;
  *
  * @author codem
  */
-public class TableManager {
+public class SuperFishModel {
     // Separate from Database Manager since I want to run SQL commands here.
     private final DatabaseManager DBManager;
     private final Connection connection;
     private Statement statement;
 
-    public TableManager() {
+    public SuperFishModel() {
         DBManager = new DatabaseManager();
         connection = DBManager.getConnection();
     }
